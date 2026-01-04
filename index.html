@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comunicados ESTADÃO - PDF</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Comunicados ESTADÃO - PDF</h1>
+    </header>
+
+    <main class="main-content">
+      <!-- Seção BR INTERIOR -->
+      <section class="input-section">
+        <div class="section-header">
+          <h2>BR INTERIOR</h2>
+        </div>
+        <div class="input-box">
+          <label for="brInterior">Cole abaixo as quantidades - BR INTERIOR</label>
+          <textarea 
+            id="brInterior" 
+            class="data-input" 
+            placeholder="Exemplo:&#10;22 | 0 | REGISTRO | 10&#10;29 | 2 | MARILIA | 10&#10;36 | 0 | CAMPINAS | 40"
+            rows="15"
+          ></textarea>
+        </div>
+      </section>
+
+      <!-- Seção SP CAPITAL -->
+      <section class="input-section">
+        <div class="section-header">
+          <h2>SP CAPITAL</h2>
+        </div>
+        <div class="input-box">
+          <label for="spCapital">Cole abaixo as quantidades - SP CAPITAL</label>
+          <textarea 
+            id="spCapital" 
+            class="data-input" 
+            placeholder="Exemplo:&#10;510 - ABCD | 50&#10;520 - BUTANTÃ | 50&#10;530 - CAMPO BELO | 50"
+            rows="15"
+          ></textarea>
+        </div>
+      </section>
+
+      <!-- Painel de Controles -->
+      <section class="controls-section">
+        <div class="upload-box">
+          <label for="pdfUpload" class="btn btn-upload">
+            📄 UPLOAD PDF DO COMUNICADO
+          </label>
+          <input 
+            type="file" 
+            id="pdfUpload" 
+            accept=".pdf" 
+            style="display: none;"
+          />
+          <div id="uploadStatus" class="upload-status"></div>
+        </div>
+
+        <button id="btnGerarBR" class="btn btn-generate">
+          🖨️ GERAR PDF - BR INTERIOR
+        </button>
+
+        <button id="btnGerarSP" class="btn btn-generate">
+          🖨️ GERAR PDF - SP CAPITAL
+        </button>
+
+        <div id="statusMessage" class="status-message"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Container oculto para gerar páginas -->
+  <div id="pages" class="hidden-pages"></div>
+
+  <!-- Bibliotecas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
